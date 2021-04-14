@@ -150,6 +150,7 @@ class SearchEngine(object):
         out.console('Searching {}'.format(self.__class__.__name__))
         self._query = utils.decode_bytes(query)
         request = self._first_page()
+        self.results = SearchResults()
 
         for page in range(1, pages + 1):
             try:
